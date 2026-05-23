@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prerna Food AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="bg"></div>
+
+    <main class="container">
+      <section class="hero">
+        <div class="hero-text">
+          <p class="tag">prerna indecisiveness resolution system</p>
+
+          <h1 id="greeting"></h1>
+
+          <p class="subtext">
+            ai-powered food recommendation because choosing food nahi hota tumse
+          </p>
+        </div>
+
+        <img class="hero-img" src="assets/cutecat.png" />
+      </section>
+
+      <section class="card">
+        <div class="card-top">
+          <div>
+            <h2>what are we feeling today?</h2>
+            <p class="small">
+              select mood parameters for recommendation generation.
+            </p>
+          </div>
+
+          <img class="mini-sticker" src="assets/peacecat.png" />
+        </div>
+
+        <div class="buttons">
+          <button onclick="runAI('chatpata')">🌶️ chatpata</button>
+
+          <button onclick="runAI('naan')">🫓 naan type mood</button>
+
+          <button onclick="runAI('veg')">🥬 veg today</button>
+
+          <button onclick="runAI('nonveg')">🍗 non veg today</button>
+
+          <button onclick="runAI('sweet')">🍫 something sweet</button>
+          <button class="butter-option" onclick="showButterPopup()">
+            🧈 better butter kha lungi
+          </button>
+          <button class="confused" onclick="openPopup()">
+            😭 i cant decide
+          </button>
+        </div>
+
+        <div class="terminal" id="terminal">waiting for prerna's input...</div>
+      </section>
+    </main>
+
+    <!-- POPUP -->
+
+    <div class="overlay hidden" id="popup">
+      <div class="popup">
+        <img class="popup-img" src="assets/baby.png" />
+
+        <h2>okay fine.</h2>
+
+        <p>im ordering for you then.</p>
+
+        <div class="popup-buttons">
+          <button class="yes-btn" onclick="acceptOrder()">okay 😔</button>
+
+          <button class="no-btn" onclick="showSadCat()">no.</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIL TUTS -->
+
+    <div class="overlay hidden" id="sadPopup">
+      <div class="popup">
+        <img class="sad-img" src="assets/diltuts.png" />
+
+        <h2 id="typingText"></h2>
+
+        <p>recommendation rejected successfully.</p>
+
+        <button class="close-btn" onclick="closeSadCat()">sorry cat</button>
+      </div>
+    </div>
+
+    <!-- BUTTER POPUP -->
+
+    <!-- BUTTER POPUP -->
+
+    <div class="overlay hidden" id="butterPopup">
+      <div class="popup">
+        <img class="sad-img" src="assets/cutegirl.png" />
+
+        <h2>naah roz roz nhi.</h2>
+
+        <p>choose something else.</p>
+
+        <button class="close-btn" onclick="closeButterPopup()">okay 😭</button>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>made with All rights reserved✨</p>
+
+      <a href="https://github.com/arjun434" target="_blank"> Arjun </a>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
